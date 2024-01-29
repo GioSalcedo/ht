@@ -1,4 +1,3 @@
-# app/controllers/banks_controller.rb
 class BanksController < ApplicationController
   before_action :set_bank, only: %i[show edit update destroy]
 
@@ -21,7 +20,6 @@ class BanksController < ApplicationController
       render 'new'
     end
   end
-
 
   def edit; end
 
