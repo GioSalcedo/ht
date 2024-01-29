@@ -7,8 +7,8 @@ RSpec.describe 'Credenciales Incorrectas', type: :system do
 
     fill_in 'Correo electrónico', with: 'usuario@example.com'
     fill_in 'Contraseña', with: 'contrasenaincorrecta'
-    click_button 'Iniciar Sesión'
+    click_button 'Iniciar sesión'
 
-    expect(page).to have_content('Correo o contraseña incorrectos')
+    expect(page).to have_content(/Correo electrónico o contraseña inválida/)
   end
 end

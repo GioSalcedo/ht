@@ -7,9 +7,9 @@ RSpec.describe 'Registro de Usuario', type: :system do
 
     fill_in 'Correo electrónico', with: 'usuario_existente@example.com'
     fill_in 'Contraseña', with: 'nuevacontrasena'
-    fill_in 'Confirmar contraseña', with: 'nuevacontrasena'
+    fill_in 'Confirmación de la contraseña', with: 'nuevacontrasena'
     click_button 'Registrarse'
 
-    expect(page).to have_content('Correo ya está siendo utilizado')
+    expect(page).to have_content(/Un error ocurrió al tratar de guardar usuario:\nCorreo electrónico ya está en uso/)
   end
 end
