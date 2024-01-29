@@ -1,4 +1,7 @@
 es:
+  welcome_message: "Bienvenido a la Página de Inicio"
+  sign_in: "Iniciar Sesión"
+  sign_up: "Registrarse"
   errors:
     messages:
       expired: "ha expirado, por favor pide una nueva"
