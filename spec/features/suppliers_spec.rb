@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Proveedores', type: :feature do
   it 'muestra mensajes de error si faltan campos obligatorios' do
-    visit new_proveedor_path
+    visit new_supplier_path
 
     click_button 'Guardar'
 
@@ -12,7 +12,7 @@ RSpec.describe 'Proveedores', type: :feature do
   end
 
   it 'muestra mensajes de error si los campos no cumplen con las características indicadas' do
-    visit new_proveedor_path
+    visit new_supplier_path
 
     fill_in 'Nombre del proveedor', with: 'Proveedor Ejemplo'
     fill_in 'NIT del proveedor', with: '123456789'
@@ -29,7 +29,7 @@ RSpec.describe 'Proveedores', type: :feature do
   end
 
   it 'muestra un mensaje de éxito si el registro se realiza correctamente' do
-    visit new_proveedor_path
+    visit new_supplier_path
 
     fill_in 'Nombre del proveedor', with: 'Proveedor Ejemplo'
     fill_in 'NIT del proveedor', with: '901362343-4'
@@ -46,7 +46,7 @@ RSpec.describe 'Proveedores', type: :feature do
     banco1 = Banco.create(nombre: 'Banco A')
     banco2 = Banco.create(nombre: 'Banco B')
 
-    visit new_proveedor_path
+    visit new_supplier_path
 
     expect(page).to have_select('Nombre del banco del proveedor', with_options: ['Banco A', 'Banco B'])
   end
