@@ -1,6 +1,6 @@
 # app/controllers/banks_controller.rb
 class BanksController < ApplicationController
-  before_action :set_bank, %i[:show :edit :update :destroy]
+  before_action :set_bank, only: %i[show edit update destroy]
 
   def index
     @banks = Bank.all
@@ -15,11 +15,13 @@ class BanksController < ApplicationController
   def create
     @bank = Bank.new(bank_params)
     if @bank.save
-      redirect_to banks_path, notice: t('.created_successfully')
+      flash[:success] = t('banks.created_successfully')
+      redirect_to banks_path
     else
-      render :new
+      render 'new'
     end
   end
+
 
   def edit; end
 

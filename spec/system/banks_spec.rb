@@ -7,7 +7,7 @@ RSpec.describe 'CRUD de bancos', type: :system do
     fill_in 'Nombre', with: 'Banco Ejemplo'
     click_button 'Guardar'
 
-    expect(page).to have_content('Banco creado correctamente')
+    expect(page.find('.alert')).to have_content('Banco creado correctamente')
   end
 
   it 'rechaza un banco con un nombre de más de 50 caracteres' do

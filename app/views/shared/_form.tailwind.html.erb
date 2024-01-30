@@ -1,0 +1,8 @@
+<%= simple_form_for @resource, html: { class: 'form' } do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :field1 %>
+  <%= f.input :field2 %>
+
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
