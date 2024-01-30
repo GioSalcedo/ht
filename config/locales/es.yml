@@ -160,4 +160,16 @@ es:
       not_saved:
         one: 'Un error ocurrió al tratar de guardar %{resource}:'
         other: "%{count} errores ocurrieron al tratar de guardar %{resource}:"
-        
+  banks:
+    created_successfully: 'Banco creado correctamente'
+    updated_successfully: 'Banco actualizado correctamente'
+    destroyed_successfully: 'Banco eliminado correctamente'
+
+  activerecord:
+    models:
+      bank:
+        one: Banco
+        other: Bancos
+    attributes:
+      bank:
+        name: Nombre
