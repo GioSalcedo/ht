@@ -2,20 +2,23 @@ es:
   welcome_message: "Bienvenido a la Página de Inicio"
   sign_in: "Iniciar sesión"
   sign_up: "Registrarse"
-  es:
+  banks:
+    created_successfully: 'Banco creado correctamente'
+    updated_successfully: 'Banco actualizado correctamente'
+    destroyed_successfully: 'Banco eliminado correctamente'
   activerecord:
     attributes:
+      bank:
+        name: Nombre
       user:
+        email: Correo electrónico
         confirmation_sent_at: Confirmación enviada a
-        confirmation_token: 'Código de confirmación
-
-          '
+        confirmation_token: 'Código de confirmación'
         confirmed_at: Confirmado en
         created_at: Creado en
         current_password: Contraseña actual
         current_sign_in_at: Inicia sesión en
         current_sign_in_ip: IP del ingreso actual
-        email: Correo electrónico
         encrypted_password: Contraseña encriptada
         failed_attempts: Intentos fallidos
         last_sign_in_at: Fecha del último ingreso
@@ -35,6 +38,9 @@ es:
       user:
         one: Usuario
         other: Usuarios
+      bank:
+        one: Banco
+        other: Bancos
     errors:
       models:
       user:
@@ -160,16 +166,3 @@ es:
       not_saved:
         one: 'Un error ocurrió al tratar de guardar %{resource}:'
         other: "%{count} errores ocurrieron al tratar de guardar %{resource}:"
-  banks:
-    created_successfully: 'Banco creado correctamente'
-    updated_successfully: 'Banco actualizado correctamente'
-    destroyed_successfully: 'Banco eliminado correctamente'
-
-  activerecord:
-    models:
-      bank:
-        one: Banco
-        other: Bancos
-    attributes:
-      bank:
-        name: Nombre
