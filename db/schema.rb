@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_30_024325) do
   end
 
   create_table "suppliers", force: :cascade do |t|
-    t.string "name"
+    t.string "supplier_name"
     t.string "nit"
     t.string "contact_person"
     t.string "phone_number"
