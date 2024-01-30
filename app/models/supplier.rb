@@ -21,14 +21,12 @@
 #  fk_rails_...  (bank_id => banks.id)
 #
 class Supplier < ApplicationRecord
-  class Proveedor < ApplicationRecord
-    belongs_to :bank
+  belongs_to :bank
   
-    validates :nombre, presence: true, length: { maximum: 50 }
-    validates :nit, presence: true, format: { with: /\A\d{9}-\d?\z/ }
-    validates :persona_contacto, presence: true
-    validates :celular, length: { maximum: 10 }, allow_blank: true
-    validates :banco, presence: true
-    validates :numero_cuenta, length: { maximum: 15 }, allow_blank: true 
-  end
+  validates :nombre, presence: true, length: { maximum: 50 }
+  validates :nit, presence: true, format: { with: /\A\d{9}-\d?\z/ }
+  validates :persona_contacto, presence: true
+  validates :celular, length: { maximum: 10 }, allow_blank: true
+  validates :banco, presence: true
+  validates :numero_cuenta, length: { maximum: 15 }, allow_blank: true 
 end
