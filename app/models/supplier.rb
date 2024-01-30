@@ -23,10 +23,10 @@
 class Supplier < ApplicationRecord
   belongs_to :bank
   
-  validates :nombre, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
   validates :nit, presence: true, format: { with: /\A\d{9}-\d?\z/ }
-  validates :persona_contacto, presence: true
-  validates :celular, length: { maximum: 10 }, allow_blank: true
-  validates :banco, presence: true
-  validates :numero_cuenta, length: { maximum: 15 }, allow_blank: true 
+  validates :contact_person, presence: true
+  validates :phone_number, length: { maximum: 10 }, allow_blank: true
+  validates :bank, presence: true
+  validates :account_number, length: { maximum: 15 }, allow_blank: true 
 end
