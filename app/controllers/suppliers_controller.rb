@@ -1,4 +1,3 @@
-# app/controllers/suppliers_controller.rb
 class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show edit update destroy]
   def index
@@ -16,7 +15,7 @@ class SuppliersController < ApplicationController
     if @supplier.save
       redirect_to @supplier, notice: 'supplier creado con éxito.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -26,7 +25,7 @@ class SuppliersController < ApplicationController
     if @supplier.update(supplier_params)
       redirect_to @supplier, notice: 'supplier actualizado con éxito.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -42,6 +41,6 @@ class SuppliersController < ApplicationController
   end
 
   def supplier_params
-    params.require(:supplier).permit(:name, :nit, :contact_person, :phone_number, :bank_id, :account_number)
+    params.require(:supplier).permit(:supplier_name, :nit, :contact_person, :phone_number, :bank_id, :account_number)
   end
 end
