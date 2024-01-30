@@ -29,6 +29,6 @@ class Supplier < ApplicationRecord
     validates :persona_contacto, presence: true
     validates :celular, length: { maximum: 10 }, allow_blank: true
     validates :banco, presence: true
-    validates :numero_cuenta, length: { maximum: 15 }, allow_blank: true
+    validates :numero_cuenta, length: { maximum: 15 }, allow_blank: true 
   end
 end
