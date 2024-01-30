@@ -160,3 +160,4 @@ es:
       not_saved:
         one: 'Un error ocurrió al tratar de guardar %{resource}:'
         other: "%{count} errores ocurrieron al tratar de guardar %{resource}:"
+        
