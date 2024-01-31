@@ -18,12 +18,12 @@
 
   <div class="field_with_errors">
     <%= form.label :nit %>
-    <%= form.text_field :nit %>
+    <%= form.text_field :nit, placeholder: "NIT" %>
   </div>
 
   <div class="field_with_errors">
     <%= form.label :bank_id %>
-    <%= form.collection_select(:bank_id, Bank.all, :id, :name, prompt: 'Seleccione un Banco') %>
+    <%= form.collection_select(:bank_id, Bank.all, :id, :name, prompt: 'Seleccione un Banco')%>
   </div>
 
   <div class="field_with_errors">
