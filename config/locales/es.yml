@@ -17,7 +17,7 @@ es:
         phone_number: Teléfono
         nit: NIT
         bank_id: Banco
-        account_number: Numero de cuenta
+        account_number: Número de Cuenta
         submit: Crear Proveedor
       bank:
         name: Nombre del banco
@@ -72,7 +72,8 @@ es:
             bank: 
               required: "debe seleccionar un banco"
             nit:
-              invalid: "no es válido"     
+              required: "no puede estar en blanco"
+              invalid: del proveedor no es válido. Debe seguir el formato 9 dígitos, un guión medio (-) y un dígito opcional.    
       messages:
         blank: "no puede estar en blanco"
 
