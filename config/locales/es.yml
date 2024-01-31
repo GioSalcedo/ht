@@ -43,11 +43,16 @@ es:
         other: Bancos
     errors:
       models:
-      user:
-        attributes:
-          email:
-            taken: "Correo ya está siendo utilizado."
-            confirmation: "La confirmación de la contraseña no coincide."
+        bank:
+          attributes:
+            name:
+              blank: "no puede estar en blanco"
+              taken: "ya está en uso"
+        user:
+          attributes:
+            email:
+              taken: "Correo ya está siendo utilizado."
+              confirmation: "La confirmación de la contraseña no coincide."
   devise:
     confirmations:
       confirmed: Tu dirección de correo electrónico se ha confirmado correctamente.
