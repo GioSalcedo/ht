@@ -17,7 +17,7 @@ class BanksController < ApplicationController
       flash[:success] = t('banks.created_successfully')
       redirect_to banks_path
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class BanksController < ApplicationController
     if @bank.update(bank_params)
       redirect_to banks_path, notice: t('.updated_successfully')
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

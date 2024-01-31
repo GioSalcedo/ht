@@ -1,0 +1,10 @@
+  <% if @bank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
+      <ul>
+        <% @bank.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
