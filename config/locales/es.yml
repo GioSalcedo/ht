@@ -1,7 +1,8 @@
 es:
   welcome_message: "Bienvenido a la Página de Inicio"
-  sign_in: "Iniciar sesión"
+  sign_in: "Iniciar Sesión"
   sign_up: "Registrarse"
+  signed_out: "Cerrar Sesión"
   banks:
     created_successfully: 'Banco creado correctamente'
     updated_successfully: 'Banco actualizado correctamente'
@@ -53,6 +54,9 @@ es:
             email:
               taken: "Correo ya está siendo utilizado."
               confirmation: "La confirmación de la contraseña no coincide."
+      messages:
+        blank: "no puede estar en blanco"
+
   devise:
     confirmations:
       confirmed: Tu dirección de correo electrónico se ha confirmado correctamente.
