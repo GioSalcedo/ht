@@ -1,0 +1,37 @@
+<%= form_for @supplier do |form| %>
+  <%= render "suppliers/shared/error_messages", resource: @supplier %>
+
+  <div class="field_with_errors">
+    <%= form.label :supplier_name %>
+    <%= form.text_field :supplier_name %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label :nit %>
+    <%= form.text_field :nit %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label :contact_person %>
+    <%= form.text_field :contact_person %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label :bank_id %>
+    <%= form.collection_select(:bank_id, Bank.all, :id, :name, prompt: 'Select a Bank') %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label :account_number %>
+    <%= form.text_field :account_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.button t("create") %>
+  </div>
+<% end %>
