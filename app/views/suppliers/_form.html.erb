@@ -3,12 +3,7 @@
 
   <div class="field_with_errors">
     <%= form.label :supplier_name %>
-    <%= form.text_field :supplier_name %>
-  </div>
-
-  <div class="field_with_errors">
-    <%= form.label :nit %>
-    <%= form.text_field :nit %>
+    <%= form.text_field :supplier_name, autofocus: true %>
   </div>
 
   <div class="field_with_errors">
@@ -22,8 +17,13 @@
   </div>
 
   <div class="field_with_errors">
+    <%= form.label :nit %>
+    <%= form.text_field :nit %>
+  </div>
+
+  <div class="field_with_errors">
     <%= form.label :bank_id %>
-    <%= form.collection_select(:bank_id, Bank.all, :id, :name, prompt: 'Select a Bank') %>
+    <%= form.collection_select(:bank_id, Bank.all, :id, :name, prompt: 'Seleccione un Banco') %>
   </div>
 
   <div class="field_with_errors">
@@ -32,6 +32,6 @@
   </div>
 
   <div class="actions">
-    <%= form.button t("create") %>
+    <%= form.button t("submit") %>
   </div>
 <% end %>
