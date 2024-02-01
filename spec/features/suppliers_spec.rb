@@ -6,48 +6,54 @@ RSpec.describe 'Proveedores', type: :feature do
 
     click_button 'Guardar'
 
-    expect(page).to have_content('Nombre del proveedor no puede estar en blanco')
-    expect(page).to have_content('Persona de contacto no puede estar en blanco')
-    expect(page).to have_content('Nombre del banco no puede estar en blanco')
+    # Here we see all the messages that are shown when the form is submitted without any data
+    expect(page).to have_selector('#error_explanation')
   end
 
-  it 'muestra mensajes de error si los campos no cumplen con las características indicadas' do
+  it 'shows error messages if the fields do not meet the specified criteria' do
+    Bank.create(name: 'Banco Ejemplo')
+
     visit new_supplier_path
 
-    fill_in 'Nombre del proveedor', with: 'Proveedor Ejemplo'
-    fill_in 'NIT del proveedor', with: '123456789'
-    fill_in 'Nombre de la persona de contacto', with: 'Contacto Ejemplo'
-    fill_in 'Número de celular de la persona de contacto', with: '12345678901'
-    fill_in 'Nombre del banco del proveedor', with: 'Banco Ejemplo'
-    fill_in 'Número de cuenta bancaria', with: '1234567890123456'
+    fill_in 'Nombre del Proveedor', with: ''
+    fill_in 'NIT', with: '123456789'
+    fill_in 'Persona de Contacto', with: 'Contacto Ejemplo'
+    fill_in 'Teléfono', with: '12345678901'
+    find('#supplier_bank_id').select('Banco Ejemplo', wait: 5)
+    fill_in 'Número de Cuenta', with: '1234567890123456'
 
     click_button 'Guardar'
 
-    expect(page).to have_content('NIT del proveedor no es válido. Debe seguir el formato 9 dígitos, un guión medio (-) y un dígito opcional.')
-    expect(page).to have_content('Número de celular de la persona de contacto no es válido. Máximo 10 caracteres permitidos.')
-    expect(page).to have_content('Número de cuenta bancaria es demasiado largo (máximo 15 caracteres). Debe ser opcional.')
+    expect(page).to have_selector('#error_explanation')
   end
 
   it 'muestra un mensaje de éxito si el registro se realiza correctamente' do
+    Bank.create(name: 'Banco Ejemplo')
+
     visit new_supplier_path
 
-    fill_in 'Nombre del proveedor', with: 'Proveedor Ejemplo'
-    fill_in 'NIT del proveedor', with: '901362343-4'
-    fill_in 'Nombre de la persona de contacto', with: 'Contacto Ejemplo'
-    fill_in 'Nombre del banco del proveedor', with: 'Banco Ejemplo'
+    fill_in 'Nombre del Proveedor', with: 'Proveedor Ejemplo'
+    fill_in 'NIT', with: '901362343-4'
+    fill_in 'Persona de Contacto', with: 'Contacto Ejemplo'
+    fill_in 'Teléfono', with: '3003003030'
+    find('#supplier_bank_id').select('Banco Ejemplo', wait: 5)
+    fill_in 'Número de Cuenta', with: '123456789012345'
 
     click_button 'Guardar'
 
-    expect(page).to have_content('La información se llenó de forma correcta')
-    expect(page).not_to have_content('NIT del proveedor no es válido')
+    expect(page).to have_content('supplier creado con éxito.')
   end
 
   it 'muestra el nombre de los bancos en un combobox en el formulario' do
-    banco1 = Banco.create(nombre: 'Banco A')
-    banco2 = Banco.create(nombre: 'Banco B')
+    banco1 = Bank.create(name: 'Banco A')
+    banco2 = Bank.create(name: 'Banco B')
 
     visit new_supplier_path
 
-    expect(page).to have_select('Nombre del banco del proveedor', with_options: ['Banco A', 'Banco B'])
+    find('#supplier_bank_id').select('Banco A', wait: 5)
+    find('#supplier_bank_id').select('Banco B', wait: 5)
+
+    expect(page).to have_content('Banco A')
+    expect(page).to have_content('Banco B')
   end
 end

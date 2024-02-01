@@ -1,16 +1,26 @@
 es:
-  welcome_message: "Bienvenido a la Página de Inicio"
-  sign_in: "Iniciar Sesión"
-  sign_up: "Registrarse"
-  signed_out: "Cerrar Sesión"
+  welcome_message: Bienvenido a la Página de Inicio
+  sign_in: Iniciar Sesión
+  sign_up: Registrarse
+  signed_out: Cerrar Sesión
+  submit: Guardar
   banks:
     created_successfully: 'Banco creado correctamente'
     updated_successfully: 'Banco actualizado correctamente'
     destroyed_successfully: 'Banco eliminado correctamente'
+  error: Errores
   activerecord:
     attributes:
+      supplier:
+        supplier_name: Nombre del Proveedor
+        contact_person: Persona de Contacto
+        phone_number: Teléfono
+        nit: NIT
+        bank_id: Banco
+        account_number: Número de Cuenta
+        submit: Crear Proveedor
       bank:
-        name: Nombre
+        name: Nombre del banco
       user:
         email: Correo electrónico
         confirmation_sent_at: Confirmación enviada a
@@ -39,12 +49,15 @@ es:
       user:
         one: Usuario
         other: Usuarios
-      bank:
+      bank: 
         one: Banco
         other: Bancos
+      supplier:
+        one: Proveedor
+        other: Proveedores
     errors:
       models:
-        bank:
+        bank: 
           attributes:
             name:
               blank: "no puede estar en blanco"
@@ -54,6 +67,13 @@ es:
             email:
               taken: "Correo ya está siendo utilizado."
               confirmation: "La confirmación de la contraseña no coincide."
+        supplier:
+          attributes:
+            bank: 
+              required: "debe seleccionar un banco"
+            nit:
+              required: "no puede estar en blanco"
+              invalid: del proveedor no es válido. Debe seguir el formato 9 dígitos, un guión medio (-) y un dígito opcional.    
       messages:
         blank: "no puede estar en blanco"
 
