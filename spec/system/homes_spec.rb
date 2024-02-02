@@ -7,7 +7,7 @@ RSpec.describe 'Home', type: :system do
     expect(page).to have_content('Bienvenido a la Página de Inicio')
     
     # Verificar enlace a log-in
-    expect(page).to have_link('Iniciar sesión', href: new_user_session_path)
+    expect(page).to have_link('Iniciar Sesión', href: new_user_session_path)
 
     # Verificar enlace a sign-up
     expect(page).to have_link('Registrarse', href: new_user_registration_path)

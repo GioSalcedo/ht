@@ -162,7 +162,7 @@ es:
     sessions:
       already_signed_out: Se ha cerrado la sesión con éxito.
       new:
-        sign_in: Iniciar sesión
+        sign_in: Iniciar Sesión
       signed_in: Sesión iniciada correctamente.
       signed_out: Sesión finalizada.
     shared:
@@ -171,8 +171,8 @@ es:
         didn_t_receive_confirmation_instructions: "¿No ha recibido las instrucciones de confirmación?"
         didn_t_receive_unlock_instructions: "¿No ha recibido instrucciones para desbloquear su cuenta?"
         forgot_your_password: "¿Ha olvidado su contraseña?"
-        sign_in: Iniciar sesión
-        sign_in_with_provider: Iniciar sesión con %{provider}
+        sign_in: Iniciar Sesión
+        sign_in_with_provider: Iniciar Sesión con %{provider}
         sign_up: Registrarse
       minimum_password_length:
         one: "(Mínimo %{count} carácter)"

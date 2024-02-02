@@ -7,7 +7,7 @@ RSpec.describe 'Inicio de Sesión', type: :system do
 
     fill_in 'Correo electrónico', with: 'usuario@example.com'
     fill_in 'Contraseña', with: 'password123'
-    click_button 'Iniciar sesión'
+    click_button 'Iniciar Sesión'
 
     expect(page).to have_content('Sesión iniciada correctamente')
   end
