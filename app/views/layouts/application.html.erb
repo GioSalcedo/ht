@@ -11,24 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="ht-white mx-5">
-    <img class="w-16 h-16 rounded-full" src="https://via.placeholder.com/64x64" />
-    <p class="ht-title">Hola</p>
-    <p class="ht-subtitle">Hola</p>
-    <p class="ht-text">Hola</p>
-    <p class="ht-text-light">Hola</p>
-    <p class="ht-text-small">Hola</p>
-    <a class="ht-link" href="#">Hola</a>
-    
-    <div class="card-empty">
-      <div class="card-white">
-        <p class="ht-subtitle">card white</p>
-        <p class="ht-text">card white</p>
-      </div>
-    </div>
+  <body class="ht-white">
+    <%=render Molecules::NavbarComponent.new %>
     <%= render "shared/flashes" %>
     <main>
       <%= yield %>
     </main>
+    <%=render Molecules::FooterComponent.new %>
   </body>
 </html>
