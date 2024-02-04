@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :banks
   resources :suppliers
+
+  if Rails.env.development?
+    mount Lookbook::Engine, at: "/lookbook"
+  end
+
 end
