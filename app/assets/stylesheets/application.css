@@ -20,3 +20,12 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+
+body {
+  max-height: 760px;
+}
+
+main {
+  height: 100%;
+  margin-inline: 10px;
+}
