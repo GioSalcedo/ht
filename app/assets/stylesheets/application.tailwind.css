@@ -2,12 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
+/* Atoms */
+  /*Colors*/
+
+  .ht-gray {
+    @apply bg-neutral-400;
+  }
+  .ht-white {
+    @apply bg-stone-50;
+  }
+  .ht-black {
+    @apply bg-indigo-950
+  }
+  .ht-blue{
+    @apply bg-indigo-900
+  }
+  .ht-green {
+    @apply bg-teal-400
+  }
+  .ht-violet {
+    @apply bg-violet-600
+  }
+  .ht-violet-light {
+    @apply bg-violet-400
+  }
+  .ht-green-light {
+    @apply bg-teal-200
+  }
+  .ht-gray-light {
+    @apply bg-neutral-100;
+  }
+
+  /* Texts Colors */
+
+  .ht-text-white {
+    @apply text-stone-50;
+  }
+
+  .ht-text-black {
+    @apply text-indigo-950;
+  }
+
+  .ht-text-violet {
+    @apply text-violet-600;
+  }
+
+  .ht-text-gray {
+    @apply text-neutral-400;
+  }
+
+  /* Letter Size */
+
+  .ht-title {
+    @apply text-2xl font-bold ht-text-black;
+  }
+
+  .ht-subtitle {
+    @apply text-xl font-semibold ht-text-black;
+  }
+
+  .ht-text {
+    @apply text-lg font-normal ht-text-black;
+  }
+  
+  .ht-text-light {
+    @apply text-lg font-normal ht-text-black;
+  }
+
+  .ht-text-small {
+    @apply text-sm;
+  }
+
+  /* Borders Colors*/
+
+  .ht-border-black {
+    @apply border-indigo-950;
+  }
+  .ht-border-violet {
+    @apply border-violet-600;
+  }
+
+  /* Buttons */ 
+
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply py-2 px-4 w-full ht-violet rounded-3xl shadow justify-center items-center inline-flex cursor-pointer ht-text-white
+
+    hover:ht-black
+
+    active:ht-violet active:shadow-inner active:gap-2.5 active:transition-all active:duration-300 active:ease-in-out;
+  }
+
+  .btn-secundary {
+    @apply py-2 px-4 w-full rounded-3xl shadow border ht-border-black ht-text-black justify-center items-center gap-2.5 inline-flex
+
+    hover:ht-border-violet hover:ht-text-violet
+    
+    active:shadow-inner active:ht-text-black  active:ht-border-black;
+  }	
+
+  .btn-round {
+    @apply p-4 rounded-full ht-violet shadow justify-center items-center cursor-pointer ht-text-white 
+
+    hover:ht-black
+
+    active:ht-violet active:shadow-inner active:transition-all active:duration-300 active:ease-in-out;
+  }
+
+  /* Avatar */
+
+    .avatar {
+      @apply w-16 h-16 rounded-full;
+    }  
+
+  /* Inputs */
+    .input-form {
+      @apply border-2 block w-full appearance-none rounded-full border-gray-400 px-0 py-2 pl-6 text-sm focus:border-gray-800 focus:outline-none focus:ring-0;
+    }
+
+    .input-checkbox {
+      @apply w-5 h-5 rounded-sm border-2 border-slate-200 focus:border-gray-800 focus:outline-none focus:ring-0;
+    }
+
+    .input-label {
+      @apply ht-subtitle
+    }
+
+  /* Options dropdown */
+
+    .options-dropdown {
+      @apply block px-4 py-3 ht-text-small capitalize transition-colors duration-200 transform hover:ht-green-light md:block;
+    }
+
+  /* Links */
+      
+    .ht-link {
+      @apply font-semibold ht-text-violet;
+    }
+
+/* Cards */
+  .card-white {
+    @apply flex flex-row space-x-10 snap-start px-2 justify-center items-center h-40 bg-white shadow-lg rounded-lg border border-gray-300 sm:w-96 sm:h-60;
+  }
+    
+  .card-empty {
+    @apply flex flex-row space-x-10 snap-start px-2 justify-center items-center max-w-full h-80 max-h-full rounded-lg border-4 border-dashed border-gray-300 ;
   }
 }
-
-*/

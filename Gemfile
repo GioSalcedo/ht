@@ -51,6 +51,7 @@ gem "annotate"
 gem "devise"
 gem "devise-i18n"
 gem 'view_component'
+gem "lookbook"
 
 
 group :development, :test do

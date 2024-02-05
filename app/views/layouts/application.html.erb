@@ -11,10 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="ht-white">
+    <%=render Molecules::NavbarComponent.new %>
     <%= render "shared/flashes" %>
     <main>
       <%= yield %>
     </main>
+    <%=render Molecules::FooterComponent.new %>
   </body>
 </html>
